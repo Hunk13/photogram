@@ -25,7 +25,7 @@ feature 'Creating Post' do
     attach_file('Image', 'spec/files/images/coffee.zip')
     fill_in 'Caption', with: 'nom nom nom #coffetime'
     click_button 'Create Post'
-    expect(page).to have_content("Halt, you fiend! You need an image to post here!")
+    expect(page).to have_content('Halt, you fiend! You need an image to post here!')
   end
 
 end
