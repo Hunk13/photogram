@@ -1,10 +1,6 @@
 language: ruby
 rvm:
- - '2.0.0-p353'
- - '2.0.0-p643'
- - '2.1.0'
  - '2.1.1'
- - '2.2.3-gost'
  - rbx
 env:
 - DB=postgresql
