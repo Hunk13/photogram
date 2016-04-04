@@ -13,7 +13,7 @@ feature 'Editing post' do
     fill_in 'Caption', with: "Oh god, you weren't meant to see this picture!"
     click_button 'Update Post'
 
-    expect(page).to have_content('Post updated hombre')
+    expect(page).to have_content("Post updated hombre")
     expect(page).to have_content("Oh god, you weren't meant to see this picture!")
   end
 
@@ -21,6 +21,6 @@ feature 'Editing post' do
     attach_file('Image', 'spec/files/images/coffee.zip')
     click_button 'Update Post'
 
-    expect(page).to have_content('Something is wrong with your form!')
+    expect(page).to have_content("Something is wrong with your form!")
   end
 end
