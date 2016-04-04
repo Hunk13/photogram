@@ -3,7 +3,6 @@ require 'rails_helper'
 feature 'Editing post' do
   background do
     job = create(:post)
-
     visit '/'
     find(:xpath, "//a[contains(@href,'posts/1')]").click
     click_link 'Edit Post'
@@ -17,7 +16,7 @@ feature 'Editing post' do
     expect(page).to have_content("Oh god, you weren't meant to see this picture!")
   end
 
-  it "won't update a post without an image" do
+  scenario "won't update a post without an image" do
     attach_file('Image', 'spec/files/images/coffee.zip')
     click_button 'Update Post'
 
