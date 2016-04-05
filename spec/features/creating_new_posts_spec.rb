@@ -14,6 +14,7 @@ feature 'Creating Post' do
     click_button 'Create Post'
     expect(page).to have_content('#coffetime')
     expect(page).to have_css("img[src*='coffee.jpg']")
+    expect(page).to have_content('Arnie')
   end
 
   scenario 'needs an image on create post' do
