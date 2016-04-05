@@ -7,7 +7,7 @@ feature 'Creating Comments' do
     sign_in_with user
 
     visit '/'
-    fill_in 'comment_content', with: ';P'
+    fill_in "comment_content_#{post.id}", with: ';P'
     click_button 'Submit'
 
     expect(page).to have_content(';P')
