@@ -23,6 +23,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'launchy'
 end
 
 group :development do
@@ -30,4 +31,4 @@ group :development do
   gem 'spring'
 end
 
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'codeclimate-test-reporter', group: :test, require: nil
