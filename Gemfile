@@ -15,7 +15,7 @@ gem 'haml'
 gem 'simple_form'
 gem 'paperclip'
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '>= 3.5.4'
 gem 'kaminari'
 gem 'acts_as_votable', '~> 0.10.0'
 
