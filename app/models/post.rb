@@ -1,7 +1,9 @@
 class Post < ActiveRecord::Base
-  validates :user_id, presence: true
+  acts_as_votable
+
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  validates :user_id, presence: true
   validates :image, presence: true
   validates :caption, length: { minimum: 3, maximum: 300 }
 

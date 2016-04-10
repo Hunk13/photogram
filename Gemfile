@@ -17,6 +17,7 @@ gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'kaminari'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug'
