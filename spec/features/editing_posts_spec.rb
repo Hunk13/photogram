@@ -14,7 +14,7 @@ feature 'Editing post' do
   end
 
   scenario 'can edit a post as the owner' do
-    find(:xpath, "//a[contains(@href,'posts/1')]").click
+    find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
     expect(page).to have_content('Edit Post')
 
     click_link 'Edit Post'
@@ -26,7 +26,7 @@ feature 'Editing post' do
   end
 
   scenario "cannot edit a post that doesn't belong to you via the show page" do
-    find(:xpath, "//a[contains(@href,'posts/2')]").click
+    find(:xpath, "//a[contains(@href,'posts/2')]", match: :first).click
     expect(page).to_not have_content('Edit Post')
   end
 
@@ -37,7 +37,7 @@ feature 'Editing post' do
   end
 
   scenario "a post won't update without an attached image" do
-    find(:xpath, "//a[contains(@href,'posts/1')]").click
+    find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
     click_link 'Edit Post'
     attach_file('post_image', 'spec/files/images/coffee.zip')
     click_button 'Update Post'

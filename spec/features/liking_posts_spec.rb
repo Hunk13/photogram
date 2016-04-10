@@ -11,9 +11,8 @@ feature 'linking post' do
 
   scenario 'can like a post' do
     click_link 'like_1'
-
-    # Expect to see a "liked-post" class appear for the button (the button will turn solid red aka Instagram).
-    # Expect to see my name within the "liked by" area of the post.
+    expect(page).to have_css('a.glyphicon-heart')
+    expect(find('.likes')).to have_content('Arnie')
   end
 
   scenario 'can unlike a post' do
