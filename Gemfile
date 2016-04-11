@@ -32,4 +32,8 @@ group :development do
   gem 'spring'
 end
 
-gem 'codeclimate-test-reporter', group: :test, require: nil
+group :test do
+  gem 'shoulda-matchers'
+  gem 'json_spec'
+  gem 'codeclimate-test-reporter', require: nil
+end
