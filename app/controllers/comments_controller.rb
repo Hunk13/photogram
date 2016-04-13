@@ -51,5 +51,5 @@ class CommentsController < ApplicationController
                         post_id: post.id,
                         identifier: comment.id,
                         notice_type: 'comment')
-end
+  end
 end
