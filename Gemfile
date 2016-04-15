@@ -19,6 +19,7 @@ gem 'devise', '>= 3.5.4'
 gem 'kaminari'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'puma'
+gem 'table_print'
 
 group :development, :test do
   gem 'byebug'
