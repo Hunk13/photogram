@@ -7,6 +7,7 @@ feature 'Index displays a list of posts' do
 
     user = create :user
     sign_in_with user
+    click_link 'Browse Posts'
   end
 
   scenario 'the index displays correct created job information' do

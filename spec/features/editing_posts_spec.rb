@@ -11,6 +11,7 @@ feature 'Editing post' do
 
     sign_in_with user
     visit '/'
+    click_link 'Browse Posts'
   end
 
   scenario 'can edit a post as the owner' do
@@ -22,6 +23,7 @@ feature 'Editing post' do
     click_button 'Update Post'
 
     expect(page).to have_content('Post updated hombre')
+    click_link 'Browse Posts' #temporary
     expect(page).to have_content("Oh god, you weren't meant to see this picture!")
   end
 

@@ -12,6 +12,7 @@ feature 'editing user profiles' do
     sign_in_with user
 
     visit root_path
+    click_link 'Browse Posts'
   end
 
   scenario 'a user can change their own profile details' do

@@ -12,6 +12,7 @@ feature 'viewing user profiles' do
     sign_in_with user
 
     visit root_path
+    click_link 'Browse Posts'
     first(:link, 'Arnie').click
   end
 

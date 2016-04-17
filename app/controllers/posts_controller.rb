@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order("created_at DESC").page params[:page]
+    @posts = Post.of_followed_users(current_user.following).order('created_at DESC').page params[:page]
   end
 
   def new
@@ -51,6 +51,10 @@ class PostsController < ApplicationController
         format.js
       end
     end
+  end
+
+  def browse
+    @posts = Post.all.order('created_at DESC').page params[:page]
   end
 
   private

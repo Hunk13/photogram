@@ -6,6 +6,7 @@ feature 'Deleting Post' do
     user = create :user
     sign_in_with user
 
+    click_link 'Browse Posts'
     find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
     click_link 'Edit Post'
   end

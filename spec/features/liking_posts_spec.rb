@@ -7,6 +7,7 @@ feature 'linking post' do
     sign_in_with user
 
     visit '/'
+    click_link 'Browse Posts'
   end
 
   scenario 'can like a post' do
