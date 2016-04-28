@@ -261,6 +261,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   shoulda-matchers
   simple_form
+  simplecov
   spring
   sqlite3
   table_print

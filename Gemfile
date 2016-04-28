@@ -38,4 +38,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'json_spec'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'simplecov', require: false
 end
