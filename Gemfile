@@ -37,6 +37,7 @@ group :development do
 end
 
 group :test do
+  gem 'pg'
   gem 'shoulda-matchers'
   gem 'json_spec'
   gem 'simplecov'
