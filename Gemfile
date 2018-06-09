@@ -22,6 +22,8 @@ gem 'kaminari'
 gem 'acts_as_votable'
 gem 'puma'
 gem 'table_print'
+gem 'bootsnap', require: false
+gem 'listen'
 
 group :development, :test do
   gem 'byebug'
