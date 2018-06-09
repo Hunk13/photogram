@@ -21,9 +21,11 @@ module Photogram
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
+    # config.active_record.raise_in_transactional_callbacks = true
     config.generators do |g|
-      g.factory_girl false
+      g.factory_bot false
     end
   end
 end
+
+Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true

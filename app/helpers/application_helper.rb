@@ -12,7 +12,7 @@ module ApplicationHelper
     return image_tag post.image.url(:medium),
                      id: 'image-preview',
                      class: 'img-responsive' if post.image.exists?
-    image_tag 'placeholder.jpg', id: 'image-preview', class: 'img-responsive'
+    image_tag 'placeholder.jpg', id: 'image-preview', class: 'img-responsive', skip_pipeline: true
   end
 
   def profile_avatar_select(user)

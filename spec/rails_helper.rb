@@ -9,10 +9,11 @@ require 'devise'
 require_relative 'support/controller_macros.rb'
 
 RSpec.configure do |config|
-  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
-  config.extend ControllerMacros, :type => :controller
+  config.extend ControllerMacros, type: :controller
 end
+
 ActiveRecord::Migration.maintain_test_schema!
 
 module AuthHelpers
@@ -25,7 +26,7 @@ module AuthHelpers
 end
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include AuthHelpers, type: :feature
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
