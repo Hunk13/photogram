@@ -7,8 +7,12 @@ feature 'Creating Comments' do
     sign_in_with user
 
     visit '/'
+    click_link 'Browse Posts'
     fill_in "comment_content_#{post.id}", with: ';P'
     click_button 'Submit'
+
+    # temporary
+    click_link 'Browse Posts'
 
     expect(page).to have_content(';P')
   end

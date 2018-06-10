@@ -6,15 +6,15 @@ feature 'Editing post' do
     user_two = create(:user, email: 'hi@hi.com',
                              user_name: 'BennyBoy',
                              id: user.id + 1)
-    post = create(:post, user_id: user.id)
-    post_two = create(:post, user_id: user.id + 1)
-
     sign_in_with user
+    post = create(:post, user_id: user.id, id: 1)
+    post_two = create(:post, user_id: user_two.id, id: post.id + 1)
     visit '/'
+    click_link 'Browse Posts'
   end
 
   scenario 'can edit a post as the owner' do
-    find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
+    first(:xpath, "//a[contains(@href,'posts/1')]").click
     expect(page).to have_content('Edit Post')
 
     click_link 'Edit Post'
@@ -22,11 +22,12 @@ feature 'Editing post' do
     click_button 'Update Post'
 
     expect(page).to have_content('Post updated hombre')
+    click_link 'Browse Posts'
     expect(page).to have_content("Oh god, you weren't meant to see this picture!")
   end
 
   scenario "cannot edit a post that doesn't belong to you via the show page" do
-    find(:xpath, "//a[contains(@href,'posts/2')]", match: :first).click
+    first(:xpath, "//a[contains(@href,'posts/2')]").click
     expect(page).to_not have_content('Edit Post')
   end
 
@@ -37,7 +38,7 @@ feature 'Editing post' do
   end
 
   scenario "a post won't update without an attached image" do
-    find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
+    first(:xpath, "//a[contains(@href,'posts/1')]").click
     click_link 'Edit Post'
     attach_file('post_image', 'spec/files/images/coffee.zip')
     click_button 'Update Post'
