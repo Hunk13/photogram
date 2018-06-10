@@ -4,7 +4,7 @@ feature 'linking post' do
   background do
     user = create :user
     sign_in_with user
-    post = create(:post, user_id: user.id)
+    post = create(:post, user_id: user.id, id: 1)
 
     visit root_path
     visit browse_posts_path

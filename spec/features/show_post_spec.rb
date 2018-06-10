@@ -4,7 +4,7 @@ feature 'Can view individual posts' do
   scenario 'Can click and view a single post' do
     user = create :user
     sign_in_with user
-    post = create :post
+    post = create(:post, user_id: user.id, id: 1)
 
     visit root_path
     visit browse_posts_path
