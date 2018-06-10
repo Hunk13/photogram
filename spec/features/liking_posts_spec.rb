@@ -3,15 +3,15 @@ require 'rails_helper'
 feature 'linking post' do
   background do
     user = create :user
-    post = create(:post, user_id: user.id)
     sign_in_with user
+    post = create(:post, user_id: user.id)
 
-    visit '/'
-    click_link 'Browse Posts'
+    visit root_path
+    visit browse_posts_path
   end
 
   scenario 'can like a post' do
-    click_link 'like_1'
+    click_link('like_1')
     expect(page).to have_css('a.glyphicon-heart')
     expect(find('.likes')).to have_content('Arnie')
   end

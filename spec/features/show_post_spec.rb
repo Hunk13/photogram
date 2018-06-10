@@ -6,8 +6,9 @@ feature 'Can view individual posts' do
     sign_in_with user
     post = create :post
 
+    visit root_path
     visit browse_posts_path
-    find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
+    first(:xpath, "//a[contains(@href,'posts/1')]").click
     expect(page.current_path).to eq(post_path(post))
   end
 end

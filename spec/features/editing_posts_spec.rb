@@ -7,8 +7,8 @@ feature 'Editing post' do
                              user_name: 'BennyBoy',
                              id: user.id + 1)
     sign_in_with user
-    post = create(:post, user_id: user.id)
-    post_two = create(:post, user_id: user.id + 1)
+    post = create(:post, user_id: user.id, id: 1)
+    post_two = create(:post, user_id: user_two.id, id: post.id + 1)
     visit '/'
     click_link 'Browse Posts'
   end
