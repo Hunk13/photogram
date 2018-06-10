@@ -6,7 +6,13 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'devise'
+require 'database_cleaner'
 require_relative 'support/controller_macros.rb'
+
+DatabaseCleaner.strategy = :truncation
+
+# then, whenever you need to clean the DB
+DatabaseCleaner.clean
 
 RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller

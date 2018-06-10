@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.5.0'
 
 gem 'rails', '5.2.0'
-gem 'sqlite3'
+gem 'pg'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -36,13 +36,14 @@ end
 group :development do
   gem 'web-console'
   gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
-  gem 'pg'
   gem 'shoulda-matchers'
   gem 'json_spec'
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
   gem 'rails-controller-testing'
+  gem 'database_cleaner'
 end

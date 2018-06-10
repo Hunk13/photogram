@@ -2,9 +2,9 @@ require 'rails_helper'
 
 feature 'Deleting Post' do
   background do
-    post = create(:post, caption: 'Abs for days')
     user = create :user
     sign_in_with user
+    post = create(:post, caption: 'Abs for days')
 
     click_link 'Browse Posts'
     find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
