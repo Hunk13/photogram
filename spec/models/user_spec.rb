@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "is valid with a email, user name and password" do
+  it "is valid user name length" do
     user = build(:short_name_user)
     user.valid?
     expect(user.errors[:user_name]).to include("is too short (minimum is 4 characters)")
