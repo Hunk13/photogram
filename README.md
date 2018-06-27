@@ -1,3 +1,4 @@
+[![Build Status](https://semaphoreci.com/api/v1/hunk13/photogram/branches/master/badge.svg)](https://semaphoreci.com/hunk13/photogram)
 [![Code Climate](https://codeclimate.com/github/Hunk13/photogram/badges/gpa.svg)](https://codeclimate.com/github/Hunk13/photogram)
 [![Test Coverage](https://codeclimate.com/github/Hunk13/photogram/badges/coverage.svg)](https://codeclimate.com/github/Hunk13/photogram/coverage)
 [![Issue Count](https://codeclimate.com/github/Hunk13/photogram/badges/issue_count.svg)](https://codeclimate.com/github/Hunk13/photogram)
