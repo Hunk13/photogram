@@ -19,3 +19,4 @@
 /public/system/*
 /coverage
 .DS_Store
+vendor/bundle
