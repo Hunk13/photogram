@@ -31,6 +31,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'launchy'
+  gem 'cucumber-rails', require: false
 end
 
 group :development do
