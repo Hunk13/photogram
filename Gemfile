@@ -1,8 +1,8 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 ruby '2.5.0'
 
-gem 'rails', '5.2.0'
+gem 'rails', '5.2.3'
 gem 'pg'
 gem 'sass-rails'
 gem 'uglifier'
