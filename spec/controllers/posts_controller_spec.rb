@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  let(:user) { create(:user) }
-  let(:post) { create(:post) }
+  let!(:user) { create(:user) }
+  let(:post) { create(:post, user: user) }
   login_user
 
   describe "GET #index" do
