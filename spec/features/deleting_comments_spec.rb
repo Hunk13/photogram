@@ -5,8 +5,8 @@ feature 'Deleting comments' do
     user = create(:user, email: 'hi@hi1.com', user_name: 'bigrigoz_one')
     user_two = create(:user, email: 'hi@hi2.com', user_name: 'bigrigoz_two')
     post = create :post, user: user
-    comment = create(:comment, user: user_two, post: post)
-    comment_two = create(:comment, post: post, content: 'You guys are too kind xo')
+    create(:comment, user: user_two, post: post)
+    create(:comment, post: post, content: 'You guys are too kind xo')
     sign_in_with user_two
   end
   scenario 'user can delete their own comments' do

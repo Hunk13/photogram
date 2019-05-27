@@ -4,7 +4,7 @@ feature 'Deleting Post' do
   background do
     user = create :user
     sign_in_with user
-    post = create(:post, caption: 'Abs for days', user: user)
+    create(:post, caption: 'Abs for days', user: user)
 
     click_link 'Browse Posts'
     find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
