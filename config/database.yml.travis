@@ -1,11 +1,14 @@
-test:
+base: &base
   adapter: postgresql
+
+test:
+  <<: *base
   database: test_pgsql
   username: postgres
   password:
 
 development:
-  adapter: postgresql
+  <<: *base
   encoding: utf8
   database: development_pgsql
   username: postgres
@@ -13,6 +16,7 @@ development:
   template: template0 # Required for UTF8 encoding
 
 deploy:
+  <<: *base
   provider: heroku
   app: sleepy-reaches-7041
   run: "rake db:migrate"
