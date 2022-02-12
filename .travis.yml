@@ -1,5 +1,5 @@
 language: ruby
-rvm: 2.5.0
+rvm: 2.7.5
 env:
   - RAILS_ENV=test
   - DB=postgresql
